@@ -1,0 +1,35 @@
+project_name: aws-dynamodb-to-aws-sam-template-converter
+builds:
+  -
+    id: "aws-dynamodb-to-aws-sam-template-converter"
+    binary: "aws-dynamodb-to-aws-sam-template-converter"
+    dir: .
+archives:
+  -
+    format_overrides:
+      - goos: windows
+        format: zip
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+nfpms:
+  -
+    vendor: Arran Ubels
+    homepage: https://github.com/aubelsb2/
+    maintainer: Arran Ubels <a.ubels@base2services.com>
+    description: NA
+    license: Private
+    formats:
+      - apk
+      - deb
+      - rpm
+    release: 1
+    section: default
+    priority: extra
